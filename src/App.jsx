@@ -10,10 +10,8 @@ function App() {
   const [trueName, setrueName] = useState("");
   const [like, setLike] = useState("");
   const [valueDate, setValueDate] = useState("");
-  // console.log(count);
 
   const handleDate = (e) => {
-    console.log(e.$d);
 
     const data = new Date(`${e.$d}`);
 
@@ -23,7 +21,6 @@ function App() {
     const mes = String(data.getMonth() + 1).padStart(2, "0");
     const dia = String(data.getDate()).padStart(2, "0");
 
-    console.log(`${dia}/${mes}/${ano}`);
 
     setValueDate(`${dia}/${mes}/${ano}`);
   };
@@ -51,12 +48,18 @@ function App() {
       ) : null}
 
       {like === "Pão (pq é a Naninha pão)" ? (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker onChange={handleDate} />
+      
+      <> 
+      <div className="text-last-aplication">digite/selecione da data da ultima aplicação:</div>
+       <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker onChange={handleDate}
+          format="DD/MM/YYYY"
+          />
         </LocalizationProvider>
+        </>
       ) : null}
 
-      {valueDate ? <div className="injection-date">Parabens você é a verdadeira, sua proxima injeção será: {valueDate}</div> : null}
+      {valueDate != 'NaN/NaN/NaN' && valueDate.length >= 10 ? <div className="injection-date">Parabens você é a verdadeira, sua proxima injeção será: {valueDate}</div> : null}
     </>
   );
 }

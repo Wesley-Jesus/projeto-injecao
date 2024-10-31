@@ -32,3 +32,7 @@ background: linear-gradient(157deg, rgba(135,37,19,1) 0%, rgba(152,27,167,1) 53%
   color: aqua;
   margin-top: 22px;
 }
+
+.text-last-aplication {
+  margin: 2rem 0 2rem;
+}
