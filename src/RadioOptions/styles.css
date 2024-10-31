@@ -1,0 +1,23 @@
+
+.radio-container {
+    border: solid white;
+    display: flex;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    padding: 1rem;
+    background: rgb(34,193,195);
+    background: linear-gradient(97deg, rgba(34,193,195,1) 0%, rgba(56,0,71,1) 100%);
+
+}
+
+.radio-container .title {
+ color: purple;
+}
+
+.radio-groupe {
+    padding: 8px;
+}
+
+.title {
+    color: aquamarine;
+}
