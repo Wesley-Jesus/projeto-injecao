@@ -5,6 +5,8 @@ import { options1, options2 } from "./utils";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import 'dayjs/locale/pt-br';
+
 
 function App() {
   const [trueName, setrueName] = useState("");
@@ -13,8 +15,8 @@ function App() {
 
   const handleDate = (e) => {
 
-    const data = new Date(`${e.$d}`);
-
+    const data = new Date(e.$d);
+    console.log(e)
     data.setDate(data.getDate() + 90);
 
     const ano = data.getFullYear();
@@ -51,9 +53,8 @@ function App() {
       
       <> 
       <div className="text-last-aplication">digite/selecione da data da ultima aplicação:</div>
-       <LocalizationProvider dateAdapter={AdapterDayjs}>
+       <LocalizationProvider dateAdapter={AdapterDayjs}  adapterLocale="pt-br">
           <DatePicker onChange={handleDate}
-          format="DD/MM/YYYY"
           />
         </LocalizationProvider>
         </>
